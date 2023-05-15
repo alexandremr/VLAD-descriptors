@@ -32,13 +32,10 @@ def get_descriptors(path, functionHandleDescriptor):
     for imagePath in glob.glob(path + "/*.jpg"):
         im = cv2.imread(imagePath)
         keypoints, desc = functionHandleDescriptor(im)
-        if descriptors is not None:
+        if desc is not None:
             descriptors.append(desc)
-
         print('Num. descriptors: {}, image: {}.'.format(len(keypoints), imagePath))
-    # flatten list
     descriptors = list(itertools.chain.from_iterable(descriptors))
-    # list to array
     descriptors = np.asarray(descriptors)
 
     return descriptors
