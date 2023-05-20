@@ -1,3 +1,5 @@
 .idea
-output
+output_descriptor
+output_visual
 __pycache__
+output_vlad
